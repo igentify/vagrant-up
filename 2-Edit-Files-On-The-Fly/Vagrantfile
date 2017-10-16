@@ -1,0 +1,14 @@
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+
+Vagrant.configure('2') do |config|
+  config.vm.box = 'ubuntu/trusty64'
+  config.vm.define 'machine' do |machine|
+    machine.vm.hostname = 'Machine'
+    machine.vm.network 'private_network', ip: '192.168.20.21'
+    machine.vm.provision 'shell', path: 'install-docker.sh'
+    machine.vm.provision 'shell', inline: <<-shell
+      docker run -d -p 80:80 -v /vagrant/shared/default.conf:/etc/nginx/conf.d/default.conf:ro -v /vagrant/shared/html:/usr/share/nginx/html nginx
+    shell
+  end
+end
