@@ -25,12 +25,12 @@ On your host machine run **_ping 192.168.33.10_** and see that you dont get an a
 In the vagrant file we created in the first step uncoment the line **_# config.vm.network "private_network", ip: "192.168.33.10"_**
 Now run **_vagrant reload_**
 Re-connect to the machine and check the IP now. You should see the ip 192.168.33.10 as an ip of the machine.
-Exit to the host machine and ping the ip again, you should now get respong from the machine.
+Exit to the host machine and ping the ip again, you should now get respond from the machine.
 
 ## Add provision steps ##
 Provision is the phase where we configure the environment using shell or configuration management utilities.
 
-Now lets changethe machine a bit.
+Now lets change the machine a bit.
 Open your browser and try to access http://192.168.33.10 - since we get no respond, lets try and change that.
 Uncomment the section bellow in the vagrant file:
 ```shell
