@@ -32,18 +32,18 @@ Provision is the phase where we configure the environment using shell or configu
 
 Now lets change the machine a bit.
 Open your browser and try to access http://192.168.33.10 - since we get no respond, lets try and change that.
-Uncomment the section bellow in the vagrant file:
+Uncomment the section below in the Vagrantfile:
 ```shell
   # config.vm.provision "shell", inline: <<-SHELL
   #   apt-get update
   #   apt-get install -y apache2
   # SHELL
 ```
-Noe tun **_vagrant provision_**. When the process ends, refresh the browser and make sure you see the deafult page of an apache server.
+Now run **_vagrant provision_**. When the process ends, refresh the browser and make sure you see the deafult page of an apache server.
 
 
 ## Suspend the machine ##
-Run **_vagrant halt_**    - Check that the machine is powered off in virtual box
+Run **_vagrant halt_**    - Check that the machine is powered off in virtual box (use **_vagrant status_** or **_vagrant global-status_**)
 
 ## Stop and Remove the machine ##
-Run **_vagrant destroy -f_**   - Check that the virtual machine is removed from VirtualBox
+Run **_vagrant destroy -f_**   - Check that the virtual machine is removed from VirtualBox.
